@@ -6,6 +6,16 @@ It analyses document structure and content to inform chunking, indexing, and ret
 
 The engine is fully local, inspectable, and intended for developers building custom AI workflows.
 
+
+## Quick Start
+- clone the repo from https://github.com/acutesoftware/lifepim-ai-core
+- create a virtual environment `python -m venv .venv`
+- activate the venv `.venv\Scripts\activate`
+- download ollama and install it
+- run the `INSTALL.BAT` to install all dependencies
+- run the test script in src  `python ./test_ai_cli.py`
+
+
 ## What LifePIM AI Core Does
 
 LifePIM AI Core provides the foundational capabilities required to build adaptive, local AI retrieval systems on top of existing document corpora.
@@ -72,8 +82,7 @@ The engine adapts to existing repositories and does not require documents to be 
 - ### LifePIM Business  
   A commercial product that builds on LifePIM AI Core by adding evaluation, governance, and operational confidence features for organisational use.  
   These additions are focused on auditability and long-term reliability rather than core retrieval functionality.  
-  Available from https://www.lifepim.com/business
+  Will be available from https://www.lifepim.com/business
 
 
 Each product is designed to stand on its own, while sharing a common retrieval engine where appropriate.
-
