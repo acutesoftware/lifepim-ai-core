@@ -8,8 +8,6 @@ Major changes documented here, including any bug fixes, breaking changes, new fe
 - cleaned and tested Install procedure
 
 
-
-
 ## [0.1.0] - 2026-01-03
 
 - Base AI core foundational code committed
