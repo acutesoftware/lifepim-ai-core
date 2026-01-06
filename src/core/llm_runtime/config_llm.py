@@ -12,7 +12,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[3]  # adjust depth if needed
 
-DOCS_FOLDER = REPO_ROOT / "tests" / "data" / "sample_docs"
+DOCS_FOLDER = REPO_ROOT / "docs"  # this has a folder 'sample_docs' to show how doc types are ingested
 
 VECTOR_CACHE_DIR = REPO_ROOT / "tests" / "data" / "sample_vectorstore"
 
