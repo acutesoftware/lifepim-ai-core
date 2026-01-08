@@ -7,8 +7,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 DOCS_FOLDER = REPO_ROOT / "docs"
 VECTOR_CACHE_DIR = REPO_ROOT / "my_app" / "my_vectorstore" # DEFAULT - works after rebuild on \docs\
-#VECTOR_CACHE_DIR = r"E:\TEMP_PROCESS\rag_vectorcache\all_notes"  # vectorstore built - search TOK
-#VECTOR_CACHE_DIR = r"E:\TEMP_PROCESS\rag_vectorcache\ebooks"  # chunks extracted, needs vectorstore built
+#VECTOR_CACHE_DIR = Path(r"E:\TEMP_PROCESS\rag_vectorcache\all_notes")  # vectorstore built - search TOK
+#VECTOR_CACHE_DIR = Path(r"E:\TEMP_PROCESS\rag_vectorcache\ebooks")  # chunks extracted, needs vectorstore built
 
 DB_FILE_METADATA = VECTOR_CACHE_DIR / "metadata.db"
 DB_FILE = VECTOR_CACHE_DIR / "chat_memory.db"
