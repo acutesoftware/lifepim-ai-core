@@ -11,7 +11,7 @@ from langchain_community.document_loaders import (
     Docx2txtLoader
 )
 from db import insert_chunk
-from core.llm_runtime import config_llm as cfg
+from core.llm_runtime import config as cfg
 
 
 def load_file_content(file_path: str):
@@ -53,7 +53,7 @@ def split_into_chunks(text: str, chunk_size, overlap):
     return splitter.split_text(text)
 
 
-def process_files(db_path, chunk_size, overlap):
+def process_files(db_path, chunk_size, overlap, verbose=False):
     """
     Takes a list of files from the database, loads and splits them into chunks,
     and stores the chunks back in the database.
@@ -74,13 +74,15 @@ def process_files(db_path, chunk_size, overlap):
 
         try:
             text = load_file_content(fpath)
-            chunks = split_into_chunks(text, chunk_size, overlap)
+            if text is not None:
+                chunks = split_into_chunks(text, chunk_size, overlap)
 
-            for i, chunk in enumerate(chunks):
-                insert_chunk(db_path,  file_id, i, chunk)
+                for i, chunk in enumerate(chunks):
+                    insert_chunk(db_path,  file_id, i, chunk)
 
-            print(f"{os.path.basename(fpath)} -> {len(chunks)} chunks")
-            total_chunks += len(chunks)
+                if verbose:
+                    print(f"{os.path.basename(fpath)} -> {len(chunks)} chunks")
+                total_chunks += len(chunks)
 
         except Exception as e:
             print(f"Error loading {fpath}: {e}")
@@ -90,5 +92,5 @@ def process_files(db_path, chunk_size, overlap):
 
 if __name__ == "__main__":
     start = time.time()
-    process_files(cfg.DB_FILE_METADATA, cfg.CHUNK_SIZE, cfg.CHUNK_OVERLAP)
+    process_files(cfg.DB_FILE_METADATA, cfg.CHUNK_SIZE, cfg.CHUNK_OVERLAP, True)
     print(f"Done in {time.time()-start:.2f}s")

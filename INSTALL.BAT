@@ -32,14 +32,10 @@ REM Embeddings / NLP
 pip install sentence-transformers
 pip install sentencepiece
 pip install transformers
-pip install tiktoken
-
 
 REM Clustering
 pip install hdbscan
 
-REM Compatibility shim (only needed for some setups)
-pip install tf-keras
 
 REM Ollama setup (run manually in PowerShell)
 REM Download & install Ollama from:

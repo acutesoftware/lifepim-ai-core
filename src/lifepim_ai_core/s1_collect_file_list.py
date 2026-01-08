@@ -2,7 +2,7 @@ import os
 import time
 from datetime import datetime
 from db import insert_many_files
-from core.llm_runtime import config_llm as cfg
+from core.llm_runtime import config as cfg
 
 def get_file_owner(file_path):
     """

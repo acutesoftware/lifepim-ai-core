@@ -1,6 +1,6 @@
 from db import create_schema, create_schema_memory
 import os
-from core.llm_runtime import config_llm as cfg
+from core.llm_runtime import config as cfg
 
 
 

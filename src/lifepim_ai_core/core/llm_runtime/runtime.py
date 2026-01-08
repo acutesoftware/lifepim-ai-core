@@ -1,6 +1,6 @@
 from .llm import LLMRuntime
 from .factory import build_chain
-from .config_llm import LLM_CONFIG
+from .config import LLM_CONFIG
 
 _llm = None
 

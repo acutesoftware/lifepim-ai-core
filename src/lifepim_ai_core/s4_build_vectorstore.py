@@ -5,7 +5,7 @@ from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
-from core.llm_runtime import config_llm as cfg
+from core.llm_runtime import config as cfg
 from db.chunks import get_all_chunks
 
 def build_vectorstore(docs):

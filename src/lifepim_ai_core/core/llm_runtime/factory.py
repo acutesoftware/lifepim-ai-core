@@ -19,8 +19,6 @@ from langchain_ollama import ChatOllama
 from .prompts import build_prompt
 from .vectorstore.search import search as vector_search
 from ..prompt_builder import format_docs
-# from . import config_llm as cfg
-
 
 class RAGWrapper:
     """

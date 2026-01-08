@@ -2,7 +2,7 @@ import os
 import sys
 from langchain_core.documents import Document
 import time 
-from core.llm_runtime import config_llm as cfg
+from core.llm_runtime import config as cfg
 
 from collections import Counter
 

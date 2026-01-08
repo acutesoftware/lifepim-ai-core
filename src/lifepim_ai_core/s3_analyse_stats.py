@@ -13,7 +13,7 @@ from db import insert_many_stats
 from sentence_transformers import SentenceTransformer
 import hdbscan
 import numpy as np
-from core.llm_runtime import config_llm as cfg
+from core.llm_runtime import config as cfg
 
 
 def analyse_text(chunk_text: str):

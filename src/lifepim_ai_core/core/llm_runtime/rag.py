@@ -3,7 +3,7 @@ import time
 from langchain_core.runnables import RunnableLambda
 
 import core.llm_runtime.vectorstore.vectorstore as mod_vectorstore # import build_retriever
-from .config_llm import LLM_CONFIG
+from .config import LLM_CONFIG
 
 def maybe_wrap_with_rag(cfg, chain):
     if not LLM_CONFIG.enable_rag:

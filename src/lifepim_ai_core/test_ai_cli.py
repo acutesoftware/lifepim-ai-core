@@ -1,7 +1,7 @@
 import core.llm_runtime.runtime as llm_rt
 import asyncio 
 
-from core.llm_runtime import config_llm as cfg
+from core.llm_runtime import config as cfg
 
 prompt = "hello - who are you?"
 

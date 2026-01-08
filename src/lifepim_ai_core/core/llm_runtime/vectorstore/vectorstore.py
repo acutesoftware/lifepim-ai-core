@@ -3,8 +3,6 @@ import sys
 import time
 from collections import Counter
 
-#from .. import config_llm as cfg  # config (module) object passed as param for now
-
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS, Chroma
 

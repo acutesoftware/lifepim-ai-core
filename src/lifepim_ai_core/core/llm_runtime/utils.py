@@ -1,6 +1,6 @@
 
 from langchain_ollama import ChatOllama
-from .config_llm import LLM_CONFIG
+from .config import LLM_CONFIG
 
 _LLM_CACHE = {}
 

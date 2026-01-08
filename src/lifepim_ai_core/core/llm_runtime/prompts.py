@@ -1,5 +1,5 @@
 from langchain_core.prompts import ChatPromptTemplate
-from .config_llm import LLM_CONFIG
+from .config import LLM_CONFIG
 
 
 def build_prompt():

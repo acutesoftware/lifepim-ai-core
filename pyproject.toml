@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lifepim-ai-core"
+version = "0.0.2"
+description = "Core RAG + LLM runtime for LifePIM"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+
+
+license = { text = "Apache 2.0" }
+
+authors = [
+  { name = "Duncan Murray", email = "djmurray@gmail.com" }
+]
+
+keywords = ["rag", "llm", "langchain", "ollama", "ai"]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "License :: OSI Approved :: Apache 2.0 License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# ----------------------------
+# CORE DEPENDENCIES
+# ----------------------------
+# These are imported by your source code today
+# and required for the system to run.
+
+dependencies = [
+  # LangChain ecosystem
+  "langchain>=1.2,<2.0",
+  "langchain-core>=1.2,<2.0",
+  "langchain-community>=0.4,<1.0",
+  "langchain-openai>=1.1,<2.0",
+  "langchain-huggingface>=1.2,<2.0",
+  "langchain-ollama>=1.0,<2.0",
+
+  # Core ML / NLP
+  "numpy>=1.26",
+  "scikit-learn>=1.4,<2.0",
+
+  # Embeddings / transformers
+  "sentence-transformers>=5.0,<6.0",
+  "sentencepiece>=0.2",
+  "transformers>=4.40,<5.0",
+
+  # Clustering (used explicitly)
+  "hdbscan>=0.8.40",
+
+  # Utility
+  "textstat>=0.7",
+
+# Document ingestion / preprocessing
+  "unstructured>=0.18,<1.0",
+  "PyMuPDF>=1.25",
+  "docx2txt>=0.8",
+  "markdown>=3.5",
+
+# Optional vector stores (NOT currently used)
+  "faiss-cpu>=1.8",
+  "chromadb>=0.4",
+
+# Development / debugging
+  "pytest>=8.0",
+  "rich>=13.7",
+
+]
+
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
