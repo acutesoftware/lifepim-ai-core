@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[4]  # adjust depth if needed
 
 DOCS_FOLDER = REPO_ROOT / "docs"  # this has a folder 'sample_docs' to show how doc types are ingested
 
-VECTOR_CACHE_DIR = REPO_ROOT / "tests" / "data" / "sample_vectorstore"
+VECTOR_CACHE_DIR = REPO_ROOT / "my_app" / "my_vectorstore"
 
 DB_FILE_METADATA = VECTOR_CACHE_DIR / "metadata.db"
 DB_FILE = VECTOR_CACHE_DIR / "chat_memory.db"

@@ -7,13 +7,13 @@ from collections import defaultdict
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-from db import insert_many_stats 
+from lifepim_ai_core.db import insert_many_stats 
 
 # For clustering
 from sentence_transformers import SentenceTransformer
 import hdbscan
 import numpy as np
-from core.llm_runtime import config as cfg
+from lifepim_ai_core.core.llm_runtime import config as cfg
 
 
 def analyse_text(chunk_text: str):

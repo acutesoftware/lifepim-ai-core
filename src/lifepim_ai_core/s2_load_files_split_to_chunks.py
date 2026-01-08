@@ -10,8 +10,8 @@ from langchain_community.document_loaders import (
     PyPDFLoader,
     Docx2txtLoader
 )
-from db import insert_chunk
-from core.llm_runtime import config as cfg
+from lifepim_ai_core.db import insert_chunk
+from lifepim_ai_core.core.llm_runtime import config as cfg
 
 
 def load_file_content(file_path: str):

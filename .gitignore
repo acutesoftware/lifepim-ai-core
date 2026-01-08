@@ -1,7 +1,7 @@
 # lifepim-ai-core exclusions
 tests/data/sample_vectorstore/
 tests/logs/
-
+my_app/my_vectorstore/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
