@@ -1,9 +1,11 @@
 (.venv) D:\DATA_LLM\dev\lifepim-ai-core\src>python test_ai_cli.py what is the architecture of lifepima-ai-core
-d:\DATA_LLM\dev\lifepim-ai-core\.venv\Lib\site-packages\langchain_core\_api\deprecation.py:26: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
-  from pydantic.v1.fields import FieldInfo as FieldInfoV1
+
 prompt = what is the architecture of lifepima-ai-core
+
 factory.py: build_chain() params = {'model': 'gpt-oss:20b', 'temperature': 0.67, 'max_tokens': 512}
+
 [vectorstore] query='what is the architecture of lifepima-ai-core' top_k=5
+
 ## High‑level architecture of **lifepim‑ai‑core**
 
 ```

@@ -207,12 +207,25 @@ def action_search(vs):
     results = vs.similarity_search(query, k=top_k)
     dt = time.time() - t0
 
-    print(f"\nRetrieved {len(results)} results in {dt:.2f}s\n")
+    # --- Deduplicate by (file_id, chunk_id) ---
+    seen = set()
+    unique_results = []
 
-    if not results:
-        return
+    for doc in results:
+        meta = safe_meta(doc)
+        file_id = meta.get("file_id", meta.get("source", "UNKNOWN"))
+        chunk_id = meta.get("chunk_id", meta.get("chunk"))
 
-    for i, doc in enumerate(results, start=1):
+        key = (file_id, chunk_id)
+        if key in seen:
+            continue
+
+        seen.add(key)
+        unique_results.append(doc)
+
+    print(f"\nRetrieved {len(unique_results)} unique chunks in {dt:.2f}s\n")
+
+    for i, doc in enumerate(unique_results, start=1):
         meta = safe_meta(doc)
         src = meta.get("source", "Unknown")
         chunk_id = meta.get("chunk_id", meta.get("chunk", "N/A"))

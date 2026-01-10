@@ -1,8 +1,11 @@
 (.venv) D:\DATA_LLM\dev\lifepim-ai-core\src>python test_ai_cli.py what temperature should I set the RAG LLM to
 
 prompt = what temperature should I set the RAG LLM to
+
 factory.py: build_chain() params = {'model': 'gpt-oss:20b', 'temperature': 0.67, 'max_tokens': 512}
+
 [vectorstore] query='what temperature should I set the RAG LLM to' top_k=5
+
 **RAG‑LLM temperature recommendation**
 
 | Model | Suggested temperature | Why |
@@ -15,4 +18,3 @@ factory.py: build_chain() params = {'model': 'gpt-oss:20b', 'temperature': 0.67,
 
 Set your RAG LLM’s temperature to **0.2–0.3** (or 0.3–0.4 for smaller models). That range gives you grounded, reliable answers while still allowing the model to be a bit expressive. If you need *extra* strictness, drop it to 0.1.
 
-(.venv) D:\DATA_LLM\dev\lifepim-ai-core\src>

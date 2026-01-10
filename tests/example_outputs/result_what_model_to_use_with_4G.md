@@ -1,9 +1,11 @@
 (.venv) D:\DATA_LLM\dev\lifepim-ai-core\src>python test_ai_cli.py what is the best model to use on with a 4G video card
-d:\DATA_LLM\dev\lifepim-ai-core\.venv\Lib\site-packages\langchain_core\_api\deprecation.py:26: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
-  from pydantic.v1.fields import FieldInfo as FieldInfoV1
+
 prompt = what is the best model to use on with a 4G video card
+
 factory.py: build_chain() params = {'model': 'gpt-oss:20b', 'temperature': 0.67, 'max_tokens': 512}
+
 [vectorstore] query='what is the best model to use on with a 4G video card' top_k=5
+
 **Short answer:**
 For a single‑GPU setup with **≈4 GB of VRAM** the most practical choice in the LifePIM AI Core ecosystem is the **`phi3.5:3.8b`** model (or, if you need an even smaller footprint, the **`qwen2.5:3b‑instruct`**).
 
