@@ -1,0 +1,48 @@
+(.venv) PS D:\DATA_LLM\dev\lifepim-ai-core\src> .\REBUILD.BAT
+
+D:\DATA_LLM\dev\lifepim-ai-core\src>python ./s0_init.py 
+Database schema created at D:\DATA_LLM\dev\lifepim-ai-core\tests\data\sample_vectorstore\metadata.db
+created memory database at D:\DATA_LLM\dev\lifepim-ai-core\tests\data\sample_vectorstore\chat_memory.db
+
+D:\DATA_LLM\dev\lifepim-ai-core\src>python ./s1_collect_file_list.py 
+📂 Scanning folder: D:\DATA_LLM\dev\lifepim-ai-core\docs
+scanning D:\DATA_LLM\dev\lifepim-ai-core\docs
+scanning D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs
+scanning D:\DATA_LLM\dev\lifepim-ai-core\docs\sample_docs
+Completed. 10 files indexed.
+Done in 0.01s
+
+D:\DATA_LLM\dev\lifepim-ai-core\src>python ./s2_load_files_split_to_chunks.py 
+D:\DATA_LLM\dev\lifepim-ai-core\.venv\Lib\site-packages\langchain_core\_api\deprecation.py:26: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
+  from pydantic.v1.fields import FieldInfo as FieldInfoV1
+config_notes.md -> 16 chunks
+result_short_answer_only.md -> 4 chunks
+result_what_architecture.md -> 0 chunks
+result_what_model_to_use_with_4G.md -> 11 chunks
+result_what_temp_to_set.md -> 0 chunks
+features.md -> 3 chunks
+model_choice.md -> 34 chunks
+LifePIM AI Core sequence diagram.pdf -> 12 chunks
+howto_file_filtering.md -> 5 chunks
+lifepim_products.docx -> 3 chunks
+Completed. 88 chunks stored.
+Done in 4.06s
+
+D:\DATA_LLM\dev\lifepim-ai-core\src>python ./s3_analyse_stats.py 
+📊 Completed. 352 stats inserted for 88 chunks.
+Batches: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 12.36it/s]
+🔗 Clustered 88 chunks into 3 groups.
+📂 Cluster 0: 5, instruct, 8b, qwen2, contentreference, index, oaicite, 3, rag, model
+📂 Cluster -1: rag, model, llm, lifepim, 3, 5, eng, core, provider, files
+📂 Cluster 1: query, llm, values, top_k, chat_id, eng, retrieved, memory, provider, chat
+⏱️ Done in 4.44s
+
+D:\DATA_LLM\dev\lifepim-ai-core\src>python ./s4_build_vectorstore.py 
+D:\DATA_LLM\dev\lifepim-ai-core\.venv\Lib\site-packages\langchain_core\_api\deprecation.py:26: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
+  from pydantic.v1.fields import FieldInfo as FieldInfoV1
+Loading chunks from DB...
+Loaded 88 chunks.
+Building vectorstore...
+Vectorstore built with 88 docs using FAISS.
+Stored at: D:\DATA_LLM\dev\lifepim-ai-core\tests\data\sample_vectorstore
+Done in 1.75s

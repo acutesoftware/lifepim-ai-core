@@ -1,0 +1,165 @@
+(.venv) PS D:\DATA_LLM\dev\lifepim-ai-core\src\lifepim_ai_core> python .\s5_query_vectorstore.py
+
+=== Vectorstore Debug Menu ===
+1) Search (similarity)
+2) Stats (counts, size, optional per-source scan)
+3) List docs/sources + chunk counts
+4) Show config snapshot
+5) Change vectorstore dir (override for this session)
+0) Exit
+Select: 1
+Loaded vectorstore in 0.07s
+Query text: rag prompt tuning
+Top K results [30]: 
+
+Retrieved 15 unique chunks in 0.07s
+
+01. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\model_choice.md
+    Chunk ID: 76 | File ID: 3
+    Snippet: Dolphin-style fine-tunes often feel more “assistant-y” and tool-friendly. Tradeoff: sometimes less strict about guardrails/formatting; for RAG, keep temperature modest.  4GB GPU (tiny-but-capable models; best for quick experiments)  phi3.5:3.8b
+
+02. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\model_choice.md
+    Chunk ID: 75 | File ID: 3
+    Snippet: qwen2.5-coder:7b-instruct  Coder-tuned; better at code, logs, stack traces, and structured output. For RAG: excellent if your indexed docs include lots of code snippets and technical notes.  Dolphin (Llama 3.x fine-tune) (optional/alternative)
+
+03. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\config_notes.md
+    Chunk ID: 1 | File ID: 1
+    Snippet: Configuration Summary — LifePIM AI Core  Concise reference for all runtime configuration parameters. Defaults are chosen to balance local performance, RAG quality, and prompt stability.  REPO_ROOT : Repository root path
+
+04. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_short_answer_only.md
+    Chunk ID: 19 | File ID: 4
+    Snippet: detailed prompts or short ones' top_k=5 Short prompts are usually better for speed and clarity, but longer detailed prompts can improve accuracy when needed.
+
+05. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\config_notes.md
+    Chunk ID: 10 | File ID: 1
+    Snippet: MAX_TOKENS : Output token limit  Maximum tokens generated per response (default: 512). Lower values are faster but may truncate answers; higher values allow fuller responses but increase latency.  MAX_CONTEXT_MESSAGES : Chat memory depth
+
+06. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_what_temp_to_set.md
+    Chunk ID: 51 | File ID: 7
+    Snippet: prompt = what temperature should I set the RAG LLM to factory.py: build_chain() params = {'model': 'gpt-oss:20b', 'temperature': 0.67, 'max_tokens': 512} [vectorstore] query='what temperature should I set the RAG LLM to' top_k=5 RAG‑LLM temperature recommendation
+
+07. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\config_notes.md
+    Chunk ID: 9 | File ID: 1
+    Snippet: TEMPERATURE : Generation randomness  Controls creativity vs determinism (default: 0.67). Lower values (0.0–0.3) produce factual, stable outputs; higher values (0.7–1.0+) increase creativity but risk hallucination.  MAX_TOKENS : Output token limit
+
+08. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_what_model_to_use_with_4G.md
+    Chunk ID: 47 | File ID: 6
+    Snippet: For RAG, retrieve only the top‑k most relevant snippets (e.g., 3–5).  Provider Settings  In config_notes.md, set PROVIDER to ollama (default) and MODEL_NAME to the chosen model.  Example: yaml PROVIDER: ollama MODEL_NAME: phi3.5:3.8b EMBED_MODEL: <your‑embed‑model>  Monitoring  Use tools like nvidia...
+
+09. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\features.md
+    Chunk ID: 57 | File ID: 2
+    Snippet: Embedding model switching  LLM / engine switching (Ollama, local models, etc.)  Search + retrieval pipeline  Top-K control & scoring visibility  Context injection (RAG plumbing)  Prompting & Behaviour  Custom prompts  Personality switching  Prompt templates  Digital clone testing (explicitly experim...
+
+10. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\model_choice.md
+    Chunk ID: 65 | File ID: 3
+    Snippet: qwen2.5:14b-instruct  Very strong general instruct model with large context support; tends to be crisp and reliable for QA. For RAG: good “grounded answer” behaviour, especially at lower temps (0.2–0.5).  qwen2.5-coder:14b-instruct
+
+11. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\config_notes.md
+    Chunk ID: 12 | File ID: 1
+    Snippet: TOP_K : Retrieved document count  Number of retrieved chunks injected into the prompt (default: 5). Small values reduce noise; large values (>8–10) often confuse the model due to excessive context.  EFFECTIVE_CONTEXT_LIMIT : Prompt token safety cap
+
+12. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\sample_docs\LifePIM AI Core sequence diagram.pdf
+    Chunk ID: 88 | File ID: 9
+    Snippet: LLM Provider (e.g., Ollama)LLM FactoryPrompt BuilderReranker (optional)EmbeddingsVectorStore (FAISS/Chroma)Memory Store (SQLite)AI Core Engine / OrchestratorDownstream App (Desktop/Business) Use retrieved_chunks as-is alt [Reranking enabled] [Reranking disabled] opt [Summarisation trigger (turns >MA...
+
+13. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\config_notes.md
+    Chunk ID: 14 | File ID: 1
+    Snippet: CHUNK_SIZE : Document chunk size  Size of chunks created during indexing (default: 351). Smaller chunks improve precision; larger chunks preserve context but reduce retrieval sharpness.  CHUNK_OVERLAP : Chunk overlap size
+
+14. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_what_architecture.md
+    Chunk ID: 25 | File ID: 5
+    Snippet: │  ├─ Metadata DB       │ │  │   • Document‑to‑   │ │  │   chunk trace      │ │  │   • Chunk stats    │ │  ├─ Vector Store      │ │  │   • Embedding model│ │  │   • Search (vector)│ │  └─ Retrieval API     │ └─────────┬────────────┘           │           ▼ ┌──────────────────────┐ │  Prompt Assembly...
+
+15. Source: D:\DATA_LLM\dev\lifepim-ai-core\docs\model_choice.md
+    Chunk ID: 71 | File ID: 3
+    Snippet: An 8B model optimized for efficient inference (sliding-window attention pattern) and long context variants exist. For RAG: a good “fast but smart” default; tends to follow instructions well and stays on-topic.  deepseek-r1:8b (Distill)
+
+
+=== Vectorstore Debug Menu ===
+1) Search (similarity)
+2) Stats (counts, size, optional per-source scan)
+3) List docs/sources + chunk counts
+4) Show config snapshot
+5) Change vectorstore dir (override for this session)
+0) Exit
+Select: 2
+
+Top sources by chunk count:
+       54  D:\DATA_LLM\dev\lifepim-ai-core\docs\model_choice.md
+       36  D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_what_architecture.md
+       32  D:\DATA_LLM\dev\lifepim-ai-core\docs\config_notes.md
+       24  D:\DATA_LLM\dev\lifepim-ai-core\docs\sample_docs\LifePIM AI Core sequence diagram.pdf
+       22  D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_what_model_to_use_with_4G.md
+       12  D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_what_temp_to_set.md
+       10  D:\DATA_LLM\dev\lifepim-ai-core\docs\sample_docs\howto_file_filtering.md
+        8  D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_short_answer_only.md
+        6  D:\DATA_LLM\dev\lifepim-ai-core\docs\features.md
+        6  D:\DATA_LLM\dev\lifepim-ai-core\docs\sample_docs\lifepim_products.docx
+
+--- Vectorstore Stats ---
+DB Type          : faiss
+Embed Model      : nomic-embed-text
+Cache Dir        : D:\DATA_LLM\dev\lifepim-ai-core\my_app\my_vectorstore
+On-disk size     : 808.8 KB
+Total chunks     : 210
+Unique sources   : 10
+-------------------------
+
+
+=== Vectorstore Debug Menu ===
+1) Search (similarity)
+2) Stats (counts, size, optional per-source scan)
+3) List docs/sources + chunk counts
+4) Show config snapshot
+5) Change vectorstore dir (override for this session)
+0) Exit
+Select: 3
+Show top N sources by chunk count [50]: 
+
+Unique sources: 10
+Top 10 sources:
+
+     54  D:\DATA_LLM\dev\lifepim-ai-core\docs\model_choice.md
+     36  D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_what_architecture.md
+     32  D:\DATA_LLM\dev\lifepim-ai-core\docs\config_notes.md
+     24  D:\DATA_LLM\dev\lifepim-ai-core\docs\sample_docs\LifePIM AI Core sequence diagram.pdf
+     22  D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_what_model_to_use_with_4G.md
+     12  D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_what_temp_to_set.md
+     10  D:\DATA_LLM\dev\lifepim-ai-core\docs\sample_docs\howto_file_filtering.md
+      8  D:\DATA_LLM\dev\lifepim-ai-core\docs\example_outputs\result_short_answer_only.md
+      6  D:\DATA_LLM\dev\lifepim-ai-core\docs\features.md
+      6  D:\DATA_LLM\dev\lifepim-ai-core\docs\sample_docs\lifepim_products.docx
+
+
+=== Vectorstore Debug Menu ===
+1) Search (similarity)
+2) Stats (counts, size, optional per-source scan)
+3) List docs/sources + chunk counts
+4) Show config snapshot
+5) Change vectorstore dir (override for this session)
+0) Exit
+Select: 4
+
+--- Config Snapshot ---
+VECTOR_DB        : faiss
+VECTOR_CACHE_DIR : D:\DATA_LLM\dev\lifepim-ai-core\my_app\my_vectorstore
+EMBED_MODEL      : nomic-embed-text
+PROVIDER         : ollama
+CHUNK_SIZE       : 351
+CHUNK_OVERLAP    : 40
+TOP_K            : 5
+MAX_TOKENS       : 256
+TEMPERATURE      : 0.2
+ACTIVE_DIR       : D:\DATA_LLM\dev\lifepim-ai-core\my_app\my_vectorstore
+-----------------------
+
+
+=== Vectorstore Debug Menu ===
+1) Search (similarity)
+2) Stats (counts, size, optional per-source scan)
+3) List docs/sources + chunk counts
+4) Show config snapshot
+5) Change vectorstore dir (override for this session)
+0) Exit
+Select: 0
+Bye.

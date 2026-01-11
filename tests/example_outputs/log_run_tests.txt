@@ -1,0 +1,18 @@
+(.venv) PS D:\DATA_LLM\dev\lifepim-ai-core\tests> python .\run_tests.py
+test_allowed_values (test_config.TestConfig.test_allowed_values) ... ok
+test_config_types_and_ranges (test_config.TestConfig.test_config_types_and_ranges) ... ok
+test_required_config_vars_exist (test_config.TestConfig.test_required_config_vars_exist) ... ok
+test_required_config_vars_not_blank (test_config.TestConfig.test_required_config_vars_not_blank) ... ok
+test_01_ollama (test_env.TestEnvironment.test_01_ollama)
+Verify Ollama server is running and responding. ... ok
+test_02_ollama_generate (test_env.TestEnvironment.test_02_ollama_generate)
+Optional: verify Ollama can generate text. ... ok
+test_builds_llm_object_with_expected_interface (test_llm_runtime.TestLLMRuntime.test_builds_llm_object_with_expected_interface) ... factory.py: build_chain() params = {'model': 'gpt-oss:20b', 'temperature': 0.2, 'max_tokens': 256}
+ok
+test_llm_invoke_returns_text (test_llm_runtime.TestLLMRuntime.test_llm_invoke_returns_text) ... [vectorstore] query='Reply with a short sentence.' top_k=5
+ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 11.119s
+
+OK
